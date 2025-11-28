@@ -26,18 +26,26 @@ export default function Hero() {
   };
 
   const renderContent = () => {
-    switch (selectedMenu) {
-      case 'menu':
-        return <Menu onSelectMenu={handleSelectMenu} />;
-      case 'about':
-        return <About onBack={handleBack} />;
-      case 'works':
-        return <Works onBack={handleBack} />;
-      case 'contact':
-        return <Contact onBack={handleBack} />;
-      default:
-        return <Logo />;
-    }
+    const content = (() => {
+      switch (selectedMenu) {
+        case 'menu':
+          return <Menu onSelectMenu={handleSelectMenu} />;
+        case 'about':
+          return <About onBack={handleBack} />;
+        case 'works':
+          return <Works onBack={handleBack} />;
+        case 'contact':
+          return <Contact onBack={handleBack} />;
+        default:
+          return <Logo />;
+      }
+    })();
+
+    return (
+      <div key={selectedMenu} className="fade-in">
+        {content}
+      </div>
+    );
   };
 
   return (
