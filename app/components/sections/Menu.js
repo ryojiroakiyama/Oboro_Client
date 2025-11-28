@@ -1,4 +1,4 @@
-export default function Menu() {
+export default function Menu({ onSelectMenu }) {
   const menuItems = [
     { id: 'about', label: 'About' },
     { id: 'works', label: 'Works' },
@@ -10,6 +10,10 @@ export default function Menu() {
       {menuItems.map((item) => (
         <button
           key={item.id}
+          onClick={(e) => {
+            e.stopPropagation();
+            onSelectMenu(item.id);
+          }}
           className="font-playfair text-4xl font-normal text-oboro-green hover:opacity-70 transition-opacity"
         >
           {item.label}

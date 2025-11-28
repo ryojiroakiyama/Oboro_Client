@@ -3,12 +3,41 @@
 import { useState } from 'react';
 import Logo from '../ui/Logo';
 import Menu from './Menu';
+import About from './About';
+import Works from './Works';
+import Contact from './Contact';
 
 export default function Hero() {
-  const [showMenu, setShowMenu] = useState(false);
+  const [selectedMenu, setSelectedMenu] = useState(null);
 
   const handleClick = () => {
-    setShowMenu(true);
+    if (selectedMenu === null) {
+      setSelectedMenu('menu');
+    }
+  };
+
+  const handleSelectMenu = (menuId) => {
+    setSelectedMenu(menuId);
+  };
+
+  const handleBack = (e) => {
+    e.stopPropagation();
+    setSelectedMenu('menu');
+  };
+
+  const renderContent = () => {
+    switch (selectedMenu) {
+      case 'menu':
+        return <Menu onSelectMenu={handleSelectMenu} />;
+      case 'about':
+        return <About onBack={handleBack} />;
+      case 'works':
+        return <Works onBack={handleBack} />;
+      case 'contact':
+        return <Contact onBack={handleBack} />;
+      default:
+        return <Logo />;
+    }
   };
 
   return (
@@ -16,7 +45,7 @@ export default function Hero() {
       className="w-screen h-screen bg-oboro-pink flex justify-center items-center cursor-pointer"
       onClick={handleClick}
     >
-      {showMenu ? <Menu /> : <Logo />}
+      {renderContent()}
     </section>
   );
 }
