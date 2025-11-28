@@ -10,6 +10,12 @@ module.exports = {
       fontFamily: {
         playfair: ["var(--font-playfair)"],
       },
+      colors: {
+        oboro: {
+          pink: '#F3DBD7',
+          green: '#4A5B31',
+        },
+      },
     },
   },
   plugins: [],
