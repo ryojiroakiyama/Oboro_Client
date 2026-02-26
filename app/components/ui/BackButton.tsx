@@ -1,4 +1,8 @@
-export default function BackButton({ onClick }) {
+export default function BackButton({
+  onClick,
+}: {
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+}) {
   return (
     <button
       onClick={onClick}
@@ -8,4 +12,3 @@ export default function BackButton({ onClick }) {
     </button>
   );
 }
-

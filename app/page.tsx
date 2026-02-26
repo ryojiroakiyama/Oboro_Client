@@ -1,7 +1,7 @@
-import Logo from './components/ui/Logo';
-import About from './components/sections/About';
-import Works from './components/sections/Works';
-import Contact from './components/sections/Contact';
+import Logo from "./components/ui/Logo";
+import About from "./components/sections/About";
+import Works from "./components/sections/Works";
+import Contact from "./components/sections/Contact";
 
 export default function Home() {
   return (

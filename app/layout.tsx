@@ -1,4 +1,5 @@
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
+import type { Metadata } from "next";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -17,15 +18,21 @@ const playfair = Playfair_Display({
   weight: ["400"],
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Oboro.Co",
   description: "Oboro.Co official website",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable}`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable}`}
+      >
         {children}
       </body>
     </html>

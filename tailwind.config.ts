@@ -1,5 +1,6 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import type { Config } from "tailwindcss";
+
+const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -12,12 +13,13 @@ module.exports = {
       },
       colors: {
         oboro: {
-          pink: '#F3DBD7',
-          green: '#4A5B31',
+          pink: "#F3DBD7",
+          green: "#4A5B31",
         },
       },
     },
   },
   plugins: [],
-}
+};
 
+export default config;

@@ -1,8 +1,12 @@
-export default function Menu({ onSelectMenu }) {
+export default function Menu({
+  onSelectMenu,
+}: {
+  onSelectMenu: (id: string) => void;
+}) {
   const menuItems = [
-    { id: 'about', label: 'About' },
-    { id: 'works', label: 'Works' },
-    { id: 'contact', label: 'Contact' },
+    { id: "about", label: "About" },
+    { id: "works", label: "Works" },
+    { id: "contact", label: "Contact" },
   ];
 
   return (
@@ -22,4 +26,3 @@ export default function Menu({ onSelectMenu }) {
     </nav>
   );
 }
-
