@@ -1,15 +1,9 @@
-import BackButton from '../ui/BackButton';
-
-export default function About({ onBack }) {
+export default function About() {
   return (
-    <>
-      <BackButton onClick={onBack} />
-      <div className="text-center">
-        <p className="font-playfair text-5xl font-normal text-oboro-green">
-          design by nature
-        </p>
-      </div>
-    </>
+    <div className="text-center">
+      <p className="font-playfair text-5xl font-normal text-oboro-green">
+        design by nature
+      </p>
+    </div>
   );
 }
-
